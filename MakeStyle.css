@@ -1,0 +1,275 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+  /* 전체 선택자 :  스타일 제거*/
+  margin: 0 auto; /* 마진 설정 0은 상하 auto는 좌우 */
+  list-style: none;
+  font-family: "맑은 고딕"; /* 글꼴 설정 속성 */
+  padding: 0; /* 모든 패딩 영역 0 */
+}
+body,
+html {
+  background-color: #ffffff; /* 배경 색깔 */
+  min-width: 1000px; /* 웹페이지의 최소 너비 설정 */
+  color: #666666; /* 글씨 색깔 */
+}
+img {
+  max-width: 100%; /* 웹페이지의 최대 너비 설정 */
+}
+.all {
+  width: 100%; /* 부모(body)의 최소넓이인 1000px로 설정됨 */
+  float: left; /* 요소 왼쪽 정렬 */
+}
+.wrap {
+  /* .wrap : 로고, 슬라이드, 콘텐츠 영역 */
+  width: 1000px; /* 너비 설정 */
+}
+#contents {
+  height: 500px; /* 높이 설정 */
+  padding: 20px; /* 컨텐츠 영역 패딩 설정 */
+}
+a {
+  color: inherit; /* 글씨 색깔 */
+  text-decoration: none; /* 하이퍼링크 텍스트 스타일 제거 */
+}
+.clear {
+  /* .clear : 와이어프레임 영역마다 사이에서 스타일 제거 역할 */
+  clear: both; /* 오른쪽 왼쪽의 스타일 모두 취소 */
+  position: inherit; /* 부모(body)의 속성값 상속 */
+}
+header {
+  /* header태그 : 로고 영역 */
+  height: 150px; /* 높이 설정 */
+}
+#header_logo {
+  /* 로고 영역 */
+  padding: 20px; /* 위쪽 패딩 설정 */
+}
+.logo {
+  height: 110px; /* 로고 사진 높이 설정 */
+  overflow: hidden; /* 로고 사진에 대한 보여주는 속성 처리 -visible(넘칠 경우 상자 밖으로 컨텐츠가 보여짐, hidden(넘치는 부분은 잘려서 보여지지 않음), scroll(스크롤바), auto(컨텐츠양에 따라 스크롤바 자동 결정) */
+  float: left; /*float-이미지를 어떻게 배치할 것인지에 대한 속성, 로고 왼쪽에 위치*/
+}
+.logo > a > img {
+  width: 300px; /*로고 사진 너비 설정*/
+}
+nav {
+  float: left; /* nav 영역 위치 오른쪽 설정 */
+  padding-left: 50px; /* 패딩 왼쪽 영역 50px */
+}
+.nav {
+  width: 600px; /* nav 영역 너비 설정 */
+  height: 20px; /* 높이설정 */
+  margin-top: 10px; /* 마진 위쪽 영역 10px */
+}
+.nav > li {
+  width: 150px; /* li 영역 너비 설정 */
+  float: left; /* 왼쪽 정렬 */
+  text-align: center; /* li 안에 텍스트 가운데 정렬 */
+  position: relative; /* 요소를 일반적인 문서 흐름에 따라 배치 */
+  transition: all 0.4s; /* 애니메이션 설정, all:모든 속성, 0.4초에 걸쳐서 나타남 */
+  padding: 5px 0; /* 패딩영역 위 아래 5px, 오른쪽 왼쪽 0 */
+}
+.nav > li:after {
+  clear: both; /* 오른쪽 왼쪽의 스타일 모두 취소 */
+}
+.nav > li:hover {
+  /* nav영역의 li영역은 마우스에 닿으면 반응 */
+  background-color: #3366ff; /* 배경 색상 */
+  color: #ffffff; /* 글씨 색상 */
+}
+.submenu {
+  display: none; /* 요소를 화면에서 숨기고 레이아웃에 공간을 차지하지 않게 만드는 데 사용 */
+  background-color: rgba(255, 255, 255, 0.8); /* submenu 배경 색상 설정 */
+  position: absolute; /*절대적인 위치 설정 */
+  z-index: 1; /*요소의 수직 위치 정하는 속성*/
+  width: 100%; /* submenu 너비 설정 */
+  margin-top: 5px; /* margin 위쪽 영역 여백 설정 */
+}
+.submenu > li {
+  padding: 5px 0 5px 0; /* 패딩영역 위 아래 5px, 오른쪽 왼쪽 0 */
+  transition: all 0.4s; /* 애니메이션 설정, all:모든 속성, 0.4초에 걸쳐서 나타남 */
+  color: #000000; /* submenu 글자색상 설정 */
+}
+.submenu > li:hover {
+  /* submenu li 영역은 마우스에 닿으면 반응 */
+  background-color: #999999; /* submenu영역 커서 위치시 색상 설정 */
+  color: inherit;
+}
+#imageslide {
+  /* 이미지 슬라이드 영역 */
+  margin: 0 auto;
+  width: 1000px; /*너비 설정*/
+  height: 400px; /*높이 설정*/
+  overflow: hidden; /* 높이와 넓이를 넘치는 내용이 들어가면 숨김 */
+  position: relative; /*기준점 시작*/
+}
+#imgs {
+  /*이미지*/
+  width: 5000px; /*너비 설정*/
+  position: absolute; /*절대적으로 배치*/
+}
+#imgs img {
+  float: left; /*왼쪽 정렬*/
+}
+#imgsbar {
+  position: relative; /*기준점 시작*/
+  margin: 20px auto; /*마진 설정 위아래 20px 양옆 오토*/
+  width: 80px; /*너비 설정*/
+}
+#imgsbar a {
+  float: left; /*왼쪽 정렬*/
+  width: 15px; /*너비 설정*/
+  height: 15px; /*높이 설정*/
+  background: url(images/slide/dot.png) no-repeat; /*배경 사진 url 반복x*/
+}
+#imgsbar a.active {
+  background-position: 0 -30px; /* 배경이미지의 위치 정하는 속성 왼쪽에서 0 위쪽에서 -30px만큼 */
+}
+.welcome {
+  /*div영역*/
+  height: 100px; /*높이 설정*/
+  width: 300px; /*너비 설정*/
+  position: absolute; /*절대적으로 배치*/
+  margin: -50px 0 0 -150px !important;
+  text-align: center; /*텍스트 가운데 정렬*/
+  line-height: 100px; /*줄 높이 설정*/
+  background-color: rgba(255, 255, 255, 0.2); /*  투명도까지 포함한 배경 설정 */
+  border-radius: 20px; /*테두리 부분 둥글게 설정*/
+  left: 50%;
+  top: 50%; /*수평 및 수직 중앙에 정렬*/
+}
+.welcome h2 {
+  color: #ffffff; /*h2의 글자색 흰색으로 설정*/
+}
+
+#contents {
+  height: 500px; /*높이 설정*/
+}
+.notice {
+  width: 480px; /*너비 설정*/
+  margin-top: 20px; /*마진 영역 위쪽 여백 설정 20px*/
+  float: left; /*왼쪽 정렬*/
+}
+.notice h2 {
+  color: #666666; /*글씨 색상*/
+  text-align: center; /*텍스트 정렬 방향 : 중앙(center)정렬*/
+  padding-bottom: 10px; /*padding 영역 여백 10px */
+}
+.table {
+  border-collapse: collapse;
+  font-size: 0.9em; /*글씨 사이즈 설정*/
+  color: #666666; /*글씨 색상*/
+  width: 480px; /*너비 설정*/
+}
+.table tr > td {
+  padding-top: 10px; /*패딩 영역 위쪽 여백 10px*/
+  padding: 5px; /*패딩 영역 여백*/
+}
+.table tr:nth-child(2n) {
+  background-color: #cccccc; /*배경색 설정*/
+}
+
+.partner {
+  width: 480px; /*너비 설정*/
+  margin-top: 20px; /*마진 영역 위쪽 여백 20px*/
+  float: right; /*오른쪽 정렬*/
+}
+.partner h2 {
+  color: #666666; /*글씨 색상*/
+  text-align: center; /*가운데 정렬*/
+  padding-bottom: 10px; /*패딩 영역 아래쪽 여백 10px*/
+}
+.partner_info {
+  margin-top: 10px; /*마진 영역 위쪽 여백 10px*/
+  text-align: center; /*가운데 정렬*/
+}
+.modal {
+  position: fixed; /* 스크롤을 돌려도 위치 고정 */
+  top: 0;
+  left: 0;
+  width: 100%; /*너비 특성*/
+  height: 100%; /*높이 특성*/
+  z-index: 99; /*요소의 수직 위치 정하는 속성*/
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center; /*가운데 정렬*/
+  display: none; /* 요소를 화면에서 숨기고 레이아웃에 공간을 차지하지 않게 만드는 데 사용 */
+}
+.modal .content {
+  margin: 20px auto; /*마진 영역 여백 상하 20px 좌우 오토*/
+  padding: 20px; /*패딩 영역 여백*/
+  width: 600px; /*너비 특성*/
+  background-color: #ffffff; /*배경색 설정*/
+}
+.modal .content img {
+  display: block; /*요소 크기 결정 태그 (block=좌우측에 다른 요소 붙여넣기X)*/
+  margin: 0 auto; /*마진 영역 여백 상하 0 좌우 오토*/
+  padding: 20px 30px; /*패딩 영역 여백 상하 20px 좌우 30px*/
+}
+.modal .content button {
+  color: #fff; /*색상 설정*/
+  padding: 5px 10px; /*패딩 영역 여백 상하 5px 좌우 10px*/
+  border-radius: 5px; /*모서리 부분 둥글게 설정*/
+  border: none; /* 테두리 영역에서 가장 낮은 우선순위 */
+  background-color: #999999;
+  cursor: pointer; /* 해당 태그 위에 마우스를 대면 마우스 커서의 모양이 바뀜(pointer는 손가락 모양) */
+}
+
+.icon {
+  margin-top: 10px; /*마진 영역 위쪽 여백 10px*/
+  position: relative; /* 요소를 일반적인 문서 흐름에 따라 배치 */
+  left: 10%;
+}
+.icons {
+  text-align: center; /*가운데 정렬*/
+}
+.btn {
+  width: 180px; /*너비 특성*/
+  margin: 30px; /*마진 영역 여백 30px*/
+  float: left; /*왼쪽 정렬*/
+  display: inline-block; /*요소 크기 결정 태그 */
+}
+.btn > button:hover {
+  /*:hover -> 마우스 커서 올릴 때*/
+  background-color: #3366ff; /*배경색 설정*/
+}
+.btn button {
+  padding: 10px; /*패딩 영역 여백*/
+  background-color: #999999; /*배경색 설정*/
+  color: #ffffff; /*글씨 색상 설정*/
+  border: none; /* 테두리 영역에서 가장 낮은 우선순위 */
+  border-radius: 10px; /*모서리 부분 둥글게 설정*/
+  font-size: 20px; /*글씨 사이즈*/
+}
+
+footer {
+  /* footer태그 : 푸터 영역 */
+  height: 100px; /* 높이 설정 */
+  width: 1000px; /* 너비 설정 */
+  background-color: #3366ff; /* 푸터 배경 색상 설정 */
+  color: #ffffff; /* 글씨 색상 설정 */
+  overflow: hidden; /* 높이와 넓이를 넘치는 내용이 들어가면 숨김 */
+  margin-top: 10px; /* 위쪽 마진 설정 */
+}
+footer .wrap {
+  /* footer에서의 전체적인 레이아웃(테두리) 영역 */
+  padding: 10px 20px; /* padding 영역 상하좌우 설정 10px은 상하 20px은 좌우 */
+}
+footer ul {
+  /* footer에서의 비순서형 목록 태그 */
+  width: 50%; /* 화면 너비 설정 */
+  float: left; /* 요소 화면에서 왼쪽 정렬 */
+}
+footer ul > li {
+  /* footer에서의 비순서형 목록 내용 태그 */
+  float: left; /* 요소 화면에서 왼쪽 정렬 */
+  margin-left: 20px; /* 왼쪽 마진 설정 */
+  margin-top: 10px; /* 위쪽 마진 설정 */
+}
+footer p {
+  width: 50%; /* 화면 너비 설정 */
+  font-size: 12px; /* 글씨 크기 */
+  float: right; /* 요소 화면에서 오른쪽 정렬 */
+  color: #ffffff; /* 글씨 색상 설정 */
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        /* position 속성을 다루기 위한 박스  */
+        /* 너비 높이 배경색 설정 */
+        width: 300px;
+        height: 130px;
+        background-color: yellow;
+        /* relative의 기준점은 요소의 왼쪽 끝 모서리 */
+        position: relative;
+        /* 위치 조정 */
+        left: 808px;
+        top: 0px;
+        /*  테두리 설정 */
+        border: 1px solid;
+      }
+      .blue-box {
+        background-color: blue;
+        width: 60px;
+        height: 60px;
+        /* absolute의 기준점은 브라우저의 왼쪽 위 모서리 */
+        position: absolute;
+        left: 950px;
+        top: 30px;
+        border-style: solid;
+      }
+      .red-circle {
+        background-color: red;
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        position: absolute;
+        left: 985px;
+        top: 55px;
+        border-style: solid;
+        /* 높이 설정 */
+        z-index: 999;
+      }
+
+      .flex-container {
+        /* flex display */
+        display: flex;
+        /* 화면이 줄어들어도 비율이 맞도록 설정 */
+        width: vw;
+        height: 50px;
+        background-color: wheat;
+        border: solid 1px;
+        top: 800px;
+        /* 아이템들의 배치 속성 */
+        flex-direction: row;
+        /* 마진 영역 여백 속성 */
+        margin: 0 auto;
+        font-weight: bold;
+      }
+      .flex-container-item1 {
+        flex-basis: 30%;
+        background-color: pink;
+      }
+      .flex-container-item2 {
+        flex-basis: 50%;
+        background-color: olive;
+      }
+      .flex-container-item3 {
+        flex-basis: 15%;
+        background-color: orange;
+      }
+      .flex-container-item4 {
+        flex-basis: 15%;
+        background-color: ivory;
+      }
+
+      .grid-container {
+        /* grid display */
+        display: grid;
+        /* 화면이 줄어들어도 비율이 맞도록 설정 */
+        width: vw;
+        height: 500px;
+        margin: 0 auto;
+        color: black;
+        border: solid 1px;
+        /* 가로세로 4칸씩 제작 */
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(4, auto);
+      }
+      .grid-container-item {
+        /* 각각의 아이템마다 flex를 설정하여 텍스트를 자유자재로 움직일 수 있도록 함 */
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border: solid 1px black;
+        margin: 0 auto;
+        color: red;
+        font-weight: bold;
+        /* 사진 꽉 차도록 설정 */
+        background-size: 100% 100%;
+        font-size: 30px;
+      }
+      .A1 {
+        /* grid-row: 첫번재 아이템 / 묶을 행(열) */
+        grid-row: 1 / span 3;
+        background-image: url(https://images.unsplash.com/photo-1697135735841-bdc8ed518902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80);
+        justify-content: center;
+        flex-direction: column;
+      }
+      .A2 {
+        grid-column: 2 / span 3;
+        background-image: url(https://images.unsplash.com/photo-1682687221363-72518513620e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80);
+        justify-content: center;
+        flex-direction: column;
+      }
+      .A3 {
+        grid-row: 2 / span 2;
+        background-image: url(https://images.unsplash.com/photo-1697388685394-9b241ec81374?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80);
+        justify-content: center;
+        flex-direction: column;
+      }
+      .A4 {
+        grid-row: 2 / span 3;
+        grid-column: 4 / span 1;
+        background-image: url(https://images.unsplash.com/photo-1696695149670-5acc89f3bfe2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1938&q=80);
+      }
+      .A5 {
+        grid-column: 1 / span 3;
+        background-image: url(https://images.unsplash.com/photo-1696383145456-a58cc98f26e7?auto=format&fit=crop&q=80&w=1740&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      }
+      .A6 {
+        background-image: url(https://images.unsplash.com/photo-1696172686863-f47aac202464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80);
+        justify-content: end;
+        flex-direction: column;
+      }
+      .A7 {
+        background-image: url(https://download.beer/wp-content/uploads/2021/01/getamped-logo-0x0.png);
+        justify-content: end;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="blue-box"></div>
+    <div class="red-circle"></div>
+    <div class="flex-container">
+      <div class="flex-container-item1">A</div>
+      <div class="flex-container-item2">B</div>
+      <div class="flex-container-item3">C</div>
+      <div class="flex-container-item4">D</div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-container-item A1">
+        <span>A</span>
+      </div>
+      <div class="grid-container-item A2">
+        <span>B</span>
+      </div>
+      <div class="grid-container-item A3">
+        <span>C</span>
+      </div>
+      <div class="grid-container-item A6">
+        <span>D</span>
+      </div>
+      <div class="grid-container-item A4">
+        <span>F</span>
+      </div>
+      <div class="grid-container-item A7">
+        <span>E</span>
+      </div>
+      <div class="grid-container-item A5">
+        <span>G</span>
+      </div>
+    </div>
+  </body>
+</html>
